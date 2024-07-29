@@ -1,6 +1,6 @@
 <header class="page-topbar" id="header">
     <div class="navbar navbar-fixed">
-        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-purple-deep-orange gradient-shadow">
+        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock bg-primary-secondary gradient-shadow">
             <div class="nav-wrapper">
                 <ul class="navbar-list right">
                     <li class="hide-on-large-only search-input-wrapper"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
