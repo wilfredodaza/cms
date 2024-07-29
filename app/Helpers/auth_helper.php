@@ -1,9 +1,23 @@
 <?php
 
 function ValidateReCaptcha($captcha){
-  $ip = $_SERVER['REMOTE_ADDR'];
-  $secretkey = env('keyReCaptcha');
-  $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
-  $attr = (object) json_decode($respuesta, TRUE);
-  return $attr->success;
+  $number_a   = session('captcha')->number_a;
+  $number_b   = session('captcha')->number_b;
+  $operacion  = session('captcha')->operacion;
+  $resultado = 0;
+  switch ($operacion) {
+    case 'mas':
+      $resultado = $number_a + $number_b;
+      break;
+    case 'menos':
+      $resultado = $number_a - $number_b;
+      break;
+    
+    default:
+      $resultado = $number_a * $number_b;
+      break;
+  }
+  if($resultado == $captcha)
+    return true;
+  else return false;
 }

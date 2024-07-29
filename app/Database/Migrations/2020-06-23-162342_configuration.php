@@ -18,7 +18,10 @@ class Configuration extends Migration
             'meta_keywords'             => ['type' => 'TEXT', 'null' => TRUE],
             'background_image'          => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => TRUE],
             'favicon'                   => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => TRUE],
-            'background_img_vertical'   => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => TRUE]
+            'background_img_vertical'   => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => TRUE],
+            'primary_color'             => ['type' => 'VARCHAR', 'constraint' => 100],
+            'secundary_color'           => ['type' => 'VARCHAR', 'constraint' => 100],
+            'captcha'                   => ['type' => 'ENUM("active", "inactive")', 'default' => 'active'],
         ]);
 		$this->forge->addPrimaryKey('id');
 		$this->forge->createTable('configurations');

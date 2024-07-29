@@ -1,3 +1,30 @@
 .list li{
   list-style-type:disc !important;
 }
+
+.bg-primary-secondary{
+  background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)) !important
+}
+
+.bg-prymary{
+  background-color: var(--primary-color);
+}
+
+.bg-secondary{
+  background-color: var(--secondary-color);
+}
+
+.sidenav li a.active{
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 3px 3px 20px 0 rgba(var(--secondary-rgb), .5);
+  color: white;
+}
+
+.navbar-full .brand-sidebar{
+  background-color: rgba(var(--primary-rgb), .2);
+}
+
+a{
+  color: var(--primary-color);
+}

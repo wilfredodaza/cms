@@ -22,7 +22,7 @@
             </div>
         </li>
         <li class="bold <?= base_url(uri_string()) == base_url(["dashboard"]) ? 'active' : '' ?>"><a
-                    class="waves-effect waves-cyan <?= base_url(uri_string()) == base_url(["dashboard"]) ? 'active' : '' ?> "
+                    class="waves-effect waves-cyan <?= base_url(uri_string()) == base_url(["dashboard"]) ? 'active' : ' black-text' ?> "
                     href="<?= base_url(["dashboard"]) ?>"><i
                         class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="Calendar"> Home</span></a>
         </li>
@@ -59,6 +59,6 @@
 
 
     <div class="navigation-background"></div>
-    <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
+    <a class="sidenav-trigger btn-sidenav-toggle bg-secondary btn-floating btn-medium waves-effect waves-light hide-on-large-only"
        href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
 </aside>

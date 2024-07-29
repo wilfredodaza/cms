@@ -25,8 +25,6 @@
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/custom.min.css">
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- END: Custom CSS-->
     <style>
         .login-bg
@@ -45,8 +43,8 @@
     <div class="col s12">
         <div class="container">
             <div id="login-page" class="row">
-                <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
-                    <form class="login-form" action="<?= base_url(['validation']) ?>" method="POST" onsubmit="onSubmit(event)">
+                <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card">
+                    <form class="login-form" action="<?= base_url(['validation']) ?>" method="POST">
                         <div class="row">
                             <div class="input-field col s12">
                                 <h5 class="ml-4">Inicio de Sesion</h5>
@@ -71,24 +69,28 @@
                                 <input id="username" type="text" name="username">
                                 <label for="username" class="center-align">Nombre de Usuario</label>
                             </div>
-                        </div>
-                        <div class="row margin">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix pt-2">lock_outline</i>
                                 <input id="password" type="password" name="password">
                                 <label for="password">Contraseña</label>
                                 <small class=""></small>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="input-field col s12">
-                                <div class="g-recaptcha"
-                                    data-sitekey="6LcKAxQqAAAAAG8jmv_L3-gSEuDvYOrMgbQAx7yF"
-                                    data-callback="validateReCaptcha"
-                                    data-expired-callback="onRecaptchaExpired"
-                                ></div>
+                                <i class="material-icons prefix pt-2">security</i>
+                                <input id="capctha" type="text" name="capctha" placeholder="Ingresar la respuesta">
+                                <label for="capctha"><?= 
+                                    session('captcha')->number_a
+                                    ." ".
+                                        (session('captcha')->operacion == 'mas' ? "+" : (session('captcha')->operacion == 'menos' ? "-" : '*'))
+                                    ." ".
+                                    session('captcha')->number_b
+                                    ?></label>
+                                <small class=""></small>
                             </div>
+                        </div>
+                        <div class="row margin">
+                        </div>
+                        <div class="row margin">
                         </div>
                         <!--<div class="row">
                             <div class="col s12 m12 l12 ml-2 mt-1">

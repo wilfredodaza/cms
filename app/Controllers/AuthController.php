@@ -17,6 +17,24 @@ class AuthController extends BaseController
     
     public function login()
     {
+        $session = session();
+        $operations = ['mas', 'menos', 'por'];
+        $number_a = (int) rand(1, 10);
+        $number_b = (int) rand(1, 10);
+
+        // Asegurarse de que number_a sea mayor que number_b
+        if ($number_a < $number_b) {
+            $temp = $number_a;
+            $number_a = $number_b;
+            $number_b = $temp;
+        }
+
+        $session->set('captcha', (object)[
+            'number_a'  => $number_a,
+            'number_b'  => $number_b,
+            'operacion' => $operations[array_rand($operations)]
+        ]);
+
         return view('auth/login');
     }
 
@@ -25,13 +43,13 @@ class AuthController extends BaseController
 
         $errors = $this->validate([
             'username' => 'required|min_length[4]',
-            'password' => 'required|min_length[8]|max_length[20]'
+            'password' => 'required|min_length[6]|max_length[20]'
         ]);
 
         if ($errors) {
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
-            $captcha = $this->request->getPost('g-recaptcha-response');
+            $captcha = $this->request->getPost('capctha');
             $validationCaptcha = ValidateReCaptcha($captcha);
             if($validationCaptcha){
                 $user = new User();

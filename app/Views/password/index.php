@@ -35,11 +35,11 @@
 
                         <ul class="list">
                             <li class="">Validez de la contraseña: 90 dias.</li>
+                            <li class="">No se permite repetir la contraseña actual ni las ultimas 5.</li>
                             <li class="">Debe de tener un mínimo de 6 caracteres.</li>
                             <li class="">Debe introducir al menos 1 letra mayúscula.</li>
                             <li class="">Debe introducir al menos 1 letra minúscula.</li>
-                            <li class="">Debe introducir al menos 1 carácter especial minúscula.</li>
-                            <li class="">Incluir un cáracter especial que no sea una letra o un número</li>
+                            <li class="">Debe introducir al menos 1 carácter especial que no sea una letra o un número.</li>
                         </ul>
 
                         
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <button class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">
+                                        <button class="btn waves-effect waves-light border-round bg-primary-secondary col s12">
                                             Renovar contraseña
                                         </button>
                                     </div>
